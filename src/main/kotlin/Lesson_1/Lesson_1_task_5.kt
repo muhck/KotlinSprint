@@ -7,6 +7,5 @@ fun main () {
     val overMinuteInSpace = minuteInSpace % 60
     val overSecondInSpase = secondInSpase % 60
 
-    // println("0$hoursInSpace:$overMinuteInSpace:0$overSecondInSpase") первый вариант, который пришел в голову
     println("${format(hoursInSpace)}:${format(overMinuteInSpace)}:${format(overSecondInSpase)}")
 }
