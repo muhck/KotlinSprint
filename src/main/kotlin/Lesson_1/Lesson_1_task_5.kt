@@ -1,5 +1,5 @@
 package Lesson_1
-
+fun format (aga: Int) = "%02d".format(aga)
 fun main () {
     val secondInSpase = 6480
     val minuteInSpace = secondInSpase / 60
@@ -8,8 +8,5 @@ fun main () {
     val overSecondInSpase = secondInSpase % 60
 
     // println("0$hoursInSpace:$overMinuteInSpace:0$overSecondInSpase") первый вариант, который пришел в голову
-    println("${"%02d".format(hoursInSpace)}:${"%02d".format(overMinuteInSpace)}:" +
-            "${"%02d".format(overSecondInSpase)}")
-
-
+    println("${format(hoursInSpace)}:${format(overMinuteInSpace)}:${format(overSecondInSpase)}")
 }
