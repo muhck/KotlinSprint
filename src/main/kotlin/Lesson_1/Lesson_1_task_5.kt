@@ -1,6 +1,6 @@
 package Lesson_1
 
-fun main () {
+fun main() {
     val secondInSpase = 6480
     val minuteInSpace = secondInSpase / 60
     val hoursInSpace = minuteInSpace / 60
