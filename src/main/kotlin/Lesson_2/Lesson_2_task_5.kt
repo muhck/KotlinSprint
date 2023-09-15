@@ -1,6 +1,5 @@
 package Lesson_2
 
-import java.text.DecimalFormat
 import kotlin.math.pow
 
 fun main() {
@@ -12,7 +11,4 @@ fun main() {
 
     println("Итоговая сумма вклада от ${enteredAmount}руб при ${interestRate}% годовых через ${term}лет составит" +
             " - ${"%.3f".format(result)}руб")
-
-//    val dddd = (DecimalFormat("#.###")).format(result)
-//    println(dddd)
 }
