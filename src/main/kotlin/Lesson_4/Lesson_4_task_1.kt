@@ -1,7 +1,8 @@
 package Lesson_4
 
+const val numberOfTables = 13
+
 fun main() {
-    val numberOfTables = 13
     var reservedTablesToday = 13
     var reservedTablesTomorrow = 9
 
