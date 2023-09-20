@@ -1,10 +1,9 @@
 package Lesson_4
 
+const val minWeightAverage = 35
+const val maxWeightAverage = 100
+const val volumeAverage = 100
 fun main() {
-    val minWeightAverage = 35
-    val maxWeightAverage = 100
-    val volumeAverage = 100
-
     val weightOfTheFirstLoad = 20
     val weightOfTheFirstVolume = 80
 
