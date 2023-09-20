@@ -20,7 +20,7 @@ fun main() {
     val weightOfTheSecondVolume = 100
 
     println(
-        "Груз с весом $weightOfTheFirstLoad кг и объемом $weightOfTheFirstVolume л соответствует категории" +
+        "Груз с весом $weightOfTheSecondLoad кг и объемом $weightOfTheSecondVolume л соответствует категории" +
                 " 'Average': ${
                     weightOfTheSecondLoad >= minWeightAverage && weightOfTheSecondLoad <= maxWeightAverage &&
                             weightOfTheSecondVolume < volumeAverage
