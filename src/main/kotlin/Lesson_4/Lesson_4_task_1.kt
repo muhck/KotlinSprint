@@ -1,6 +1,6 @@
 package Lesson_4
 
-const val Number_of_Tables = 13
+const val NUMBER_OF_TABLES = 13
 
 fun main() {
     var reservedTablesToday = 13
