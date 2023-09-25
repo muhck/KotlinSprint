@@ -1,9 +1,9 @@
 package Lesson_4
 
-val IS_SUNNY = true
-val IS_AWNING_OPEN = true
-val AIR_HUMIDITY = 20
-val SEASON = "зима"
+const val IS_SUNNY = true
+const val IS_AWNING_OPEN = true
+const val AIR_HUMIDITY = 20
+const val SEASON = "зима"
 
 fun main() {
     println(
