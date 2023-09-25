@@ -1,13 +1,14 @@
 package Lesson_4
 
-fun main() {
-    val weatherTodaySunny = true
-    val awningOpen = true
-    val airHumidity = 20
-    val season = "зима"
+val IS_SUNNY = true
+val IS_AWNING_OPEN = true
+val AIR_HUMIDITY = 20
+val SEASON = "зима"
 
+fun main() {
     println(
         "Благоприятные ли условия сейчас для роста бобовых? ${
-            weatherTodaySunny && awningOpen && airHumidity == 20 && season != "зима"}"
+            IS_SUNNY && IS_AWNING_OPEN && AIR_HUMIDITY == 20 && SEASON != "зима"
+        }"
     )
 }
