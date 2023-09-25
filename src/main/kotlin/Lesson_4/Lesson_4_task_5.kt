@@ -10,9 +10,9 @@ fun main() {
     print("Благоприятна ли погода: ")
     val isSunny = readlnOrNull().toBoolean()
 
-    if (isDamaged == false && crewComposition >= 55 && crewComposition <= 70 && provisionsOnBoard > 50)
+    if (!isDamaged && crewComposition >= 55 && crewComposition <= 70 && provisionsOnBoard > 50)
         println("Научно-исследовательский корабль может приступить к долгосрочному плаванию")
-    else if (isDamaged == true && crewComposition == 70 && provisionsOnBoard > 50 && isSunny == true)
+    else if (crewComposition == 70 && provisionsOnBoard > 50 && isSunny == true)
         println("Научно-исследовательский корабль может приступить к долгосрочному плаванию")
     else
         println("Научно-исследовательский корабль не может приступить к долгосрочному плаванию")
