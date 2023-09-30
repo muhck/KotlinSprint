@@ -16,9 +16,10 @@ fun main() {
     )
     val useEnter = readln()
 
-    if (firstNumberEntered == firstCorrectNumber && secondNumberEntered == secondCorrectNumber)
-        println("Поздравляем! Вы выиграли главный приз!")
-    else if (firstNumberEntered == secondCorrectNumber && secondNumberEntered == firstCorrectNumber)
+    if (
+        firstNumberEntered == firstCorrectNumber && secondNumberEntered == secondCorrectNumber ||
+        firstNumberEntered == secondCorrectNumber && secondNumberEntered == firstCorrectNumber
+    )
         println("Поздравляем! Вы выиграли главный приз!")
     else if (
         firstNumberEntered == firstCorrectNumber || firstNumberEntered == secondCorrectNumber ||
