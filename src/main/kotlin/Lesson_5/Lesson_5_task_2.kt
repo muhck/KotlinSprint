@@ -1,15 +1,16 @@
 package Lesson_5
 
-import java.util.*
+import java.time.LocalDateTime
 
-val DATE = Calendar.getInstance()
-val AGE_OF_MAGORITY = DATE.get(Calendar.YEAR) - 18
+const val AGE_OF_MAJORITY = 18
 
 fun main() {
-    print("Введите год рождения: ")
-    val userYearOfBirth = readLine()!!.toInt()
 
-    val resultText = if (userYearOfBirth <= AGE_OF_MAGORITY) "Показать экран со скрытым контентом"
+    val ageOfMajority = LocalDateTime.now().year - AGE_OF_MAJORITY
+    print("Введите год рождения: ")
+    val userYearOfBirth = readln().toInt()
+
+    val resultText = if (userYearOfBirth <= ageOfMajority) "Показать экран со скрытым контентом"
     else "Вернуться на главный экран"
 
     println(resultText)
