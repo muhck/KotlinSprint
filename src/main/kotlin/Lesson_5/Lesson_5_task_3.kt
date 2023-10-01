@@ -12,9 +12,10 @@ fun main() {
     print("Правильный ответ: 7 и 56. Нажмите клавишу \"ENTER\" чтобы продолжить")
     val useEnter = readln()
 
-    if (firstNumberEntered == FIRST_CORRECT_NUMBER && secondNumberEntered == SECOND_CORRECT_NUMBER)
-        println("Поздравляем! Вы выиграли главный приз!")
-    else if (firstNumberEntered == SECOND_CORRECT_NUMBER && secondNumberEntered == FIRST_CORRECT_NUMBER)
+    if (
+        firstNumberEntered == FIRST_CORRECT_NUMBER && secondNumberEntered == SECOND_CORRECT_NUMBER ||
+        firstNumberEntered == SECOND_CORRECT_NUMBER && secondNumberEntered == FIRST_CORRECT_NUMBER
+    )
         println("Поздравляем! Вы выиграли главный приз!")
     else if (
         firstNumberEntered == FIRST_CORRECT_NUMBER || firstNumberEntered == SECOND_CORRECT_NUMBER ||
