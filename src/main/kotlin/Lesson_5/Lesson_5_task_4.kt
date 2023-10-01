@@ -18,9 +18,9 @@ fun main() {
         return
     }
 
-    if (enteringName == USER_NAME) {
         print("\nВведите пароль пользователя: ")
         val enteringPassword = readln()
+
         if (enteringPassword == USER_PASSWOR) print(
             "\n\"[вздыхает...] Ваши данные проверены, и о, чудо, они верны... Пользователь \"Zaphod\", вам разрешено" +
                     " входить на борт корабля \"Heart of Gold\". \nХотя мне всё равно... Ну вперед, войдите... Если" +
@@ -28,5 +28,4 @@ fun main() {
                     " \nпребывание здесь больше, чем мне.\""
         )
         else print("\nНеверный пароль")
-    }
 }
