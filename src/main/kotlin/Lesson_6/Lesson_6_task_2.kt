@@ -6,5 +6,5 @@ fun main() {
     val enteredTimeInMilliseconds = enteredTime * 1000
     Thread.sleep(enteredTimeInMilliseconds)
 
-    println("Прошло $enteredTime секунд")
+    println("Прошло секунд: $enteredTime ")
 }
