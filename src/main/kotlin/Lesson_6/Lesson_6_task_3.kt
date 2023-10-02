@@ -5,9 +5,7 @@ fun main() {
     var enteredTime = readln().toInt()
 
     while (enteredTime > 0) {
-        if (enteredTime >= 5) println("Осталось ${enteredTime--} секунд")
-        else if (enteredTime > 1) println("Осталось ${enteredTime--} секунды")
-        else println("Осталось ${enteredTime--} секунда")
+        println("Осталось секунд: ${enteredTime--}")
         Thread.sleep(1000)
     }
 
