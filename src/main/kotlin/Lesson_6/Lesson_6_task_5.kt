@@ -4,7 +4,7 @@ fun main() {
     var firstRandonNumber = (1..9).random()
     var secondRandonNumber = (1..9).random()
 
-    val result = firstRandonNumber + secondRandonNumber
+    var result = firstRandonNumber + secondRandonNumber
     var attempts = 2
 
     print("Решите пример: $firstRandonNumber + $secondRandonNumber = ")
@@ -13,6 +13,8 @@ fun main() {
     while (attempts > 0 && enteredValue != result) {
         firstRandonNumber = (1..9).random()
         secondRandonNumber = (1..9).random()
+        result = firstRandonNumber + secondRandonNumber
+
         print(
             "Неправильный ответ. Осталось попыток: ${attempts--}. " +
                     "Решите пример: $firstRandonNumber + $secondRandonNumber = "
