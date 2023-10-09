@@ -4,13 +4,13 @@ fun main() {
     print("Дайте наименование блюда: ")
     val nameFood = readln()
 
-    var arrayIngredients: Array<String> = arrayOf()
     print("Отлично! Напишите количество планируемых ингредиентов: ")
     val numberIngr = readln().toInt()
+    val arrayIngr = arrayOfNulls<String>(numberIngr)
 
-    for (i in 1..numberIngr) {
-        print("Напишите $i ингредиент: ")
-        arrayIngredients += readln()
+    for (index in 1..numberIngr) {
+        print("Напишите $index ингредиент: ")
+        arrayIngr[index - 1] = readln()
     }
-    println("Вот ваш список ингредиентов для блюда \"$nameFood\": ${arrayIngredients.joinToString(", ")}")
+    println("Вот ваш список ингредиентов для блюда \"$nameFood\": ${arrayIngr.joinToString(", ")}")
 }
