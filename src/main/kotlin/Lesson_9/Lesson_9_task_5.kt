@@ -15,8 +15,7 @@ fun main() {
     val newListIngr = listIngr.sorted()
     println(
         "Вот ваш список ингредиентов  в алфавитном порядке: ${
-            newListIngr.joinToString(", ")
-                .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+            newListIngr.joinToString(", ").replaceFirstChar { it.titlecase(Locale.getDefault()) }
         }"
     )
 }
