@@ -4,19 +4,18 @@ fun main() {
     print("Чтобы задать длину сгенерированного пароля, введите необходимое количество символов: ")
     val enteredNumber = readln().toInt()
 
-    println("Вот ваш пароль: ${passwordGeneration(enteredNumber)}")
+    print("Вот ваш пароль: ")
+    generatePassword(enteredNumber)
 }
 
-fun passwordGeneration(ad: Int): String {
+fun generatePassword(passwordLength: Int) {
+    val password = arrayOfNulls<Char>(passwordLength)
 
-    val password = arrayOfNulls<Char>(ad)
-
-    for (index in 1..ad step 2) {
-        password[index - 1] = ('0'..'9').random()
+    for (index in 1..passwordLength) {
+        when (index % 2) {
+            1 -> password[index - 1] = ('0'..'9').random()
+            0 -> password[index - 1] = (32..47).random().toChar()
+        }
     }
-
-    for (index in 1..<ad step 2) {
-        password[index] = " !\"#\$%&'()*+,-./".random()
-    }
-    return password.joinToString("")
+    return password.forEach { print(it) }
 }
