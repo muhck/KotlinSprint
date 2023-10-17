@@ -1,38 +1,40 @@
 package Lesson_10
 
+const val CONTINUATION_OF_THE_GAME = "да"
+
 fun main() {
-    var numberWins = 0
+    var numberWinsPlayer = 0
     do {
-        val numberWinse = gameStep(randomPoint(), randomPoint())
-        if (numberWinse == 1) numberWins++
+        val winPlayer = appointWinner()
+        if (winPlayer) numberWinsPlayer++
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         val continueGame = readln()
-    } while (continueGame == "да")
-    printNumberWins(numberWins)
+    } while (continueGame == CONTINUATION_OF_THE_GAME)
+    printNumberOfWins(numberWinsPlayer)
 }
 
-fun randomPoint() = (1..6).random()
-
-fun gameStep(randomNumber1: Int, randomNumber2: Int): Int {
-    var winningPlayer = 0
+fun appointWinner(): Boolean {
+    var winPlayer = false
     do {
-        println("Первым ходит игрок, бросая кости, выпадает: $randomNumber1")
+        val playerPoints = (1..6).random()
+        val computerPoints = (1..6).random()
+        println("Первым ходит игрок, бросая кости, выпадает: $playerPoints")
         Thread.sleep(1000)
-        println("Вторым ходит компьютер, бросая кости, выпадает: $randomNumber2")
+        println("Вторым ходит компьютер, бросая кости, выпадает: $computerPoints")
         Thread.sleep(1000)
 
-        if (randomNumber1 < randomNumber2) {
+        if (playerPoints < computerPoints) {
             println("Победил компьютер.")
 
-        } else if (randomNumber1 > randomNumber2) {
-            winningPlayer++
+        } else if (playerPoints > computerPoints) {
+            winPlayer = true
             println("Победило человечество.")
         } else {
             println("Ничья? Переиграем.")
             Thread.sleep(1000)
         }
-    } while (randomNumber1 == randomNumber2)
-    return winningPlayer
+    } while (playerPoints == computerPoints)
+    return winPlayer
 }
 
-fun printNumberWins(number: Int) = print("Количество побед у человека: $number")
+fun printNumberOfWins(number: Int) = print("Количество побед у человека: $number")
