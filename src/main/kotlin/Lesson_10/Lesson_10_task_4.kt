@@ -1,15 +1,15 @@
 package Lesson_10
 
+const val CONTINUE_GAME = "да"
+
 fun main() {
-    val arrayToContinueGame = arrayOf("да", "Да", "ДА")
     var numberWinsPlayer = 0
     do {
         val winPlayer = appointWinner()
         if (winPlayer) numberWinsPlayer++
         println("Хотите бросить кости еще раз? Введите Да или Нет")
-        val continueGame = readln()
-        val found = arrayToContinueGame.any { continueGame == it }
-    } while (found)
+        val continueGame = readln().lowercase()
+    } while (continueGame == CONTINUE_GAME)
     printNumberOfWins(numberWinsPlayer)
 }
 
