@@ -5,7 +5,7 @@ class User2(
     var password: String,
     val email: String,
     val uniqueIndentifier: String,
-    var bio: String,
+    private var bio: String = "",
 ) {
     fun outputOfUserData() {
         println(
@@ -47,7 +47,6 @@ fun main() {
         password = "12345678",
         email = "koshka@gmail.com",
         uniqueIndentifier = "64523457",
-        bio = ""
     )
 
     userData1.addEntryToBio()
