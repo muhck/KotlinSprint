@@ -1,18 +1,32 @@
 package Lesson_11
 
-class Room(
-    val cover: String = "какая-то картинка",
-    val name: String = "любители кошек",
-    val avatarsOfUsers: List<String> = listOf("аватар Димы", "аватар Николая", "аватар Маши"),
-    val listParticipants: List<String> = listOf("Дима", "Николай", "Маша"),
-    val talking: String = "\"разговаривает\"",
-    val microphoneOff: String = "\"микрофон выключен\"",
-    val userSilent: String = "\"пользователь заглушен\"",
+class Member(
+    var avatarsOfUser: String,
+    var participant: String,
+    var status: String = "микрофон выключен",
 ) {
+//    fun determineTheStatus(q:Int){
+//        if (q==1) status = "разговаривает"
+//        else if (q==2) status= "микрофон выключен"
+//        else status = "пользователь заглушен"
+//    }
+}
+
+class Room(avatar: List<String>, participants: List<String>, status: List<String>) {
+    val cover = "cover_image.png"
+    val name = "Комнаты"
+    val avatarsOfUsers = avatar
+    val listParticipants = participants
+    val listStatus = status
+
+//    fun addToArray(r: String){
+//        avatarsOfUsers.add(r)
+//    }
+
     fun printInformation() {
-        println("Выводим обложку \"$cover\"")
-        println("Название комнаты: $name")
-        println("Аватарки участников: ${avatarsOfUsers.joinToString(", ")}")
+        println(cover)
+        println(name)
+        println(avatarsOfUsers.joinToString(", "))
     }
 
     fun displayNames() {
@@ -21,8 +35,8 @@ class Room(
         for (i in avatarsOfUsers.indices) {
             if (avatarsOfUsers[i] == enteredDate) {
                 println(
-                    """""Вывелось имя участника" - ${listParticipants[i]}
-                        |"Вывелся его статус" - $talking
+                    """"Имя участника - ${listParticipants[i]}
+                        |Его статус - ${listStatus[i]}
                     """.trimMargin()
                 )
             }
@@ -32,7 +46,22 @@ class Room(
 }
 
 fun main() {
-    val room = Room()
+    val dima = Member("аватар Димы", "Дима")
+    val dasha = Member("аватар Даши", "Даша")
+    val kolya = Member("аватар Коли", "Коля")
+    val leha = Member("аватар Лехи", "Леха")
+
+    val listParticipantsAva = listOf(dasha.avatarsOfUser, dima.avatarsOfUser, kolya.avatarsOfUser, leha.avatarsOfUser)
+    val listParticipants = listOf(dasha.participant, dima.participant, kolya.participant, leha.participant)
+    val listStatus = listOf(dasha.status, dima.status, kolya.status, leha.status)
+
+    val room = Room(listParticipantsAva, listParticipants, listStatus)
+
+//    room.addToArray(dima.avatarsOfUsers)
+//    room.addToArray(dasha.avatarsOfUsers)
+//    room.addToArray(kolya.avatarsOfUsers)
+//    room.addToArray(leha.avatarsOfUsers)
+
     room.printInformation()
     println()
     room.displayNames()
