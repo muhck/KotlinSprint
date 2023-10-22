@@ -1,27 +1,17 @@
 package Lesson_11
 
 class Member(
-    var avatarsOfUser: String,
-    var participant: String,
-    var status: String = "микрофон выключен",
-) {
-//    fun determineTheStatus(q:Int){
-//        if (q==1) status = "разговаривает"
-//        else if (q==2) status= "микрофон выключен"
-//        else status = "пользователь заглушен"
-//    }
-}
+    var avatarsOfUser: List<String>,
+    var participant: List<String>,
+    var status: List<String>,
+)
 
 class Room(avatar: List<String>, participants: List<String>, status: List<String>) {
-    val cover = "cover_image.png"
-    val name = "Комнаты"
-    val avatarsOfUsers = avatar
-    val listParticipants = participants
-    val listStatus = status
-
-//    fun addToArray(r: String){
-//        avatarsOfUsers.add(r)
-//    }
+    private val cover = "cover_image.png"
+    private val name = "Комнаты"
+    private val avatarsOfUsers = avatar
+    private val listParticipants = participants
+    private val listStatus = status
 
     fun printInformation() {
         println(cover)
@@ -46,21 +36,13 @@ class Room(avatar: List<String>, participants: List<String>, status: List<String
 }
 
 fun main() {
-    val dima = Member("аватар Димы", "Дима")
-    val dasha = Member("аватар Даши", "Даша")
-    val kolya = Member("аватар Коли", "Коля")
-    val leha = Member("аватар Лехи", "Леха")
+    val member = Member(
+        listOf("аватар Димы", "аватар Даши", "аватар Коли", "аватар Лехи"),
+        listOf("Дима", "Даша", "Коля", "Леха"),
+        listOf("разговаривает","микрофон выключен","микрофон выключен","пользователь заглушен")
+    )
 
-    val listParticipantsAva = listOf(dasha.avatarsOfUser, dima.avatarsOfUser, kolya.avatarsOfUser, leha.avatarsOfUser)
-    val listParticipants = listOf(dasha.participant, dima.participant, kolya.participant, leha.participant)
-    val listStatus = listOf(dasha.status, dima.status, kolya.status, leha.status)
-
-    val room = Room(listParticipantsAva, listParticipants, listStatus)
-
-//    room.addToArray(dima.avatarsOfUsers)
-//    room.addToArray(dasha.avatarsOfUsers)
-//    room.addToArray(kolya.avatarsOfUsers)
-//    room.addToArray(leha.avatarsOfUsers)
+    val room = Room(member.avatarsOfUser, member.participant, member.status)
 
     room.printInformation()
     println()
