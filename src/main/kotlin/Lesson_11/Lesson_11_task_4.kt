@@ -5,12 +5,12 @@ class Dish(
     val category: String,
     val cover: String,
     val ingredients: List<String>,
-) {}
+)
 
 class Screen(
-    val cover: String,
-    val name: String,
-    val dish: List<Dish>
+    private val cover: String,
+    private val name: String,
+    private val dish: List<Dish>
 ) {
     fun openFavoritesScreen() {
         println(cover)
