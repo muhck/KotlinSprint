@@ -1,50 +1,46 @@
 package Lesson_11
 
 class Member(
-    var avatarsOfUser: List<String>,
-    var participant: List<String>,
-    var status: List<String>,
-)
+    val avatarsOfUser: String,
+    val participant: String,
+    status: List<String> = listOf(
+        "разговаривает",
+        "микрофон выключен",
+        "пользователь заглушен"
+    ),
+) {
+    val badge: String = status[status.indices.random()]
+}
 
-class Room(avatar: List<String>, participants: List<String>, status: List<String>) {
-    private val cover = "cover_image.png"
-    private val name = "Комнаты"
-    private val avatarsOfUsers = avatar
-    private val listParticipants = participants
-    private val listStatus = status
-
+class Room(
+    private val cover: String,
+    private val name: String,
+    private val members: List<Member>
+) {
     fun printInformation() {
         println(cover)
         println(name)
-        println(avatarsOfUsers.joinToString(", "))
-    }
-
-    fun displayNames() {
-        println("Удерживайте аватар, чтобы отобразилась информация о участнике (введите данные):")
-        val enteredDate = readln()
-        for (i in avatarsOfUsers.indices) {
-            if (avatarsOfUsers[i] == enteredDate) {
-                println(
-                    """"Имя участника - ${listParticipants[i]}
-                        |Его статус - ${listStatus[i]}
-                    """.trimMargin()
-                )
-            }
-        }
-
+        members.forEach { println(it.avatarsOfUser) }
     }
 }
 
 fun main() {
-    val member = Member(
-        listOf("аватар Димы", "аватар Даши", "аватар Коли", "аватар Лехи"),
-        listOf("Дима", "Даша", "Коля", "Леха"),
-        listOf("разговаривает","микрофон выключен","микрофон выключен","пользователь заглушен")
-    )
+    val member1 = Member("аватар Димы", "Дима")
+    val member2 = Member("аватар Даши", "Даша")
+    val member3 = Member("аватар Коли", "Коля")
+    val member4 = Member("аватар Лехи", "Леха")
 
-    val room = Room(member.avatarsOfUser, member.participant, member.status)
+    val room = Room("cover_image.png", "любители кошек", listOf(member1, member2, member3, member4))
 
     room.printInformation()
-    println()
-    room.displayNames()
+
+    println("Удерживайте аватар, чтобы отобразилась информация о участнике (введите данные):")
+    val enteredDate = readln()
+
+    when (enteredDate) {
+        member1.avatarsOfUser -> println("Имя участника: ${member1.participant}; его статус: ${member1.badge}")
+        member2.avatarsOfUser -> println("Имя участника: ${member2.participant}; его статус: ${member2.badge}")
+        member3.avatarsOfUser -> println("Имя участника: ${member3.participant}; его статус: ${member3.badge}")
+        member4.avatarsOfUser -> println("Имя участника: ${member4.participant}; его статус: ${member4.badge}")
+    }
 }
